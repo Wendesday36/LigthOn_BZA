@@ -4,16 +4,15 @@ class Lampa {
   #DivElem;
   constructor(szuloElem, index) {
     this.szuloElem = szuloElem;
-    this.#index = index;
-    this.#allapot = false
+    this.#index = index ;
+    this.#allapot = true
     szuloElem.append(`<div class="elem"></div>`);
     this.#DivElem = $(`article div:last-child`);
     this.#DivElem.on("click", () => {
       /* this.setElem("X"); */
-      if (this.#allapot) {
+      
         this.#Kattintastrigger();
-        
-      }
+       
 
       this.setAllapot(this.#allapot);
     });
@@ -30,6 +29,7 @@ class Lampa {
       
     } else {
       this.#DivElem.css("background-color", "green");
+      
       
     }
   }
