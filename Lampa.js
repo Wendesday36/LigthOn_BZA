@@ -2,12 +2,13 @@ class Lampa {
   #allapot;
   #index;
   #DivElem;
-  constructor(szuloElem, index) {
+  constructor(szuloElem, index,allapot) {
     this.szuloElem = szuloElem;
     this.#index = index ;
-    this.#allapot = true
+    this.#allapot = allapot
     szuloElem.append(`<div class="elem"></div>`);
     this.#DivElem = $(`article div:last-child`);
+    this.#SzinBeallit(allapot);
     this.#DivElem.on("click", () => {
       /* this.setElem("X"); */
       

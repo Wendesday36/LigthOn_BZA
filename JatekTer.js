@@ -8,15 +8,16 @@ class JatekTer {
     const szuloElem = $("article");
     this.#lepes = 0;
     this.#meret = 9;
-    this.#allapoLista = [];
+    this.#allapoLista = [false,false,false,false,false,false,false,false,false];
+    this.#setAllapotLista();
     for (let index = 0; index < 9; index++) {
-      const elem = new Lampa(szuloElem, index);
+      const elem = new Lampa(szuloElem, index,this.#allapoLista[index]);
 
     } 
     $(window).on("kapcsolas", (event) => {
       console.log(event.detail);
 
-      event.detail.setAllapot(this.#setAllapotLista());
+      event.detail.#setAllapotLista();
       this.#db++;
       this.#lepes++;
 
@@ -25,12 +26,12 @@ class JatekTer {
   #setAllapotLista() {
     
     for (let index = 0; index < this.#allapoLista.length; index++) {
-      const szam = Math.floor(Math.random() * 2) + 1;
-      this.#allapoLista[i[elem.setAllapot]] == szam;
+      const szam = Math.floor(Math.random() * 3) + 1;
+      console.log(szam)
       if (szam == 1) {
-        this.#allapoLista[i[elem.setAllapot]] = true;
+        this.#allapoLista[index] = true;
       } else {
-        this.#allapoLista[i[elem.setAllapot]] = false;
+        this.#allapoLista[index] = false;
       }
     }
   }
