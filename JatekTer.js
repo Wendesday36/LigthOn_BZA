@@ -15,7 +15,7 @@ class JatekTer {
     $(window).on("kapcsolas", (event) => {
       console.log(event.detail);
 
-      event.detail.setAllapot(this.#allapoLista);
+      event.detail.setAllapot(this.#setAllapotLista());
 
       this.#lepes++;
 
@@ -24,12 +24,13 @@ class JatekTer {
     });
   }
   #setAllapotLista() {
-    for (let i = 0; i < this.#allapoLista.length; i++) {
-      this.#allapoLista[i[elem]] = Math.random();
-      if (this.#allapoLista[i[elem]] == 1) {
-        this.#allapoLista[i[elem]] == true;
+    for (let index = 0; index < this.#allapoLista.length; index++) {
+      const szam = Math.random();
+      this.#allapoLista[i[(elem.szuloElem, elem.index)]] == szam;
+      if (szam == 1) {
+        this.#allapoLista[i[elem.setAllapot]] == true;
       } else {
-        this.#allapoLista[i[elem]] == false;
+        this.#allapoLista[i[elem.setAllapot]] == false;
       }
     }
   }

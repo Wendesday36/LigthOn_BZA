@@ -4,8 +4,8 @@ class Lampa {
   #DivElem;
   constructor(szuloElem, index) {
     this.szuloElem = szuloElem;
-    this.index = index;
-    this.#allapot = true;
+    this.#index = index;
+    this.#allapot = false
     szuloElem.append(`<div class="elem"></div>`);
     this.#DivElem = $(`article div:last-child`);
     this.#DivElem.on("click", () => {
@@ -21,14 +21,16 @@ class Lampa {
 
   setAllapot(allapot) {
     this.#allapot = !this.#allapot;
-    this.#SzinBeallit(allapot);
-    this.#DivElem.html(allapot);
+    this.#SzinBeallit(this.#allapot);
+    
   }
   #SzinBeallit(allapot) {
-    if ((allapot == false)) {
-      this.#DivElem = $("article div:last-child").css("background-color", "yellow");
+    if ((allapot == false )) {
+      this.#DivElem.css("background-color", "yellow");
+      
     } else {
-      this.#DivElem = $("article div:last-child").css("background-color", "yellow");
+      this.#DivElem.css("background-color", "green");
+      
     }
   }
   #Kattintastrigger() {
