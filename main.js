@@ -1,5 +1,5 @@
-import Lampa from "./Lampa,js";
+import JatekTer from "./JatekTer.js";
 
 $(function(){
-    new Lampa();
+    new JatekTer();
 })

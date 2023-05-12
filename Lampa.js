@@ -1,6 +1,6 @@
 class Lampa {
   #allapot;
-  #db;
+  #index;
   #DivElem;
   constructor(szuloElem, index) {
     this.szuloElem = szuloElem;
@@ -8,29 +8,30 @@ class Lampa {
     this.#allapot = true;
     szuloElem.append(`<div class="elem"></div>`);
     this.#DivElem = $(`article div:last-child`);
-    this.divElem.on("click", () => {
+    this.#DivElem.on("click", () => {
       /* this.setElem("X"); */
       if (this.#allapot) {
-        this.esemenytrigger();
-        this.setAllapot();
+        this.#Kattintastrigger();
+        
       }
 
-      this.#allapot = false;
+      this.setAllapot(this.#allapot);
     });
   }
 
   setAllapot(allapot) {
-    this.allapot = false;
-    this.SzinBeallit();
+    this.#allapot = !this.#allapot;
+    this.#SzinBeallit(allapot);
+    this.#DivElem.html(allapot);
   }
   #SzinBeallit(allapot) {
-    if ((allapot = false)) {
-      szin = yellow;
+    if ((allapot == false)) {
+      this.#DivElem = $("article div:last-child").css("background-color", "yellow");
     } else {
-      szin = green;
+      this.#DivElem = $("article div:last-child").css("background-color", "yellow");
     }
   }
-  esemenytrigger() {
+  #Kattintastrigger() {
     const esemeny = new CustomEvent("kapcsolas", {
       detail: this,
     });
